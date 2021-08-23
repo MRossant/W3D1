@@ -87,6 +87,22 @@ class Array
         self.rotate(num)
     end
 
+    # def my_join(symbol="")
+    #     self.join(symbol)
+    # end
+
+    def my_join(symbol="")
+        answer = ""
+        self.each.with_index do |el, i|
+            if i == self.length - 1
+                answer += el
+            else
+                answer += el + symbol
+            end
+        end
+    answer
+    end
+
     
 end  
 
@@ -109,8 +125,12 @@ end
 # d = [13, 14, 15]
 # p [1, 2].my_zip(a, b, c, d)    # => [[1, 4, 7, 10, 13], [2, 5, 8, 11, 14]]    
 
+# a = [ "a", "b", "c", "d" ]
+# p a.my_rotate         #=> ["b", "c", "d", "a"]
+# p a.my_rotate(2)      #=> ["c", "d", "a", "b"]
+# p a.my_rotate(-3)     #=> ["b", "c", "d", "a"]
+# p a.my_rotate(15)     #=> ["d", "a", "b", "c"]
+
 a = [ "a", "b", "c", "d" ]
-p a.my_rotate         #=> ["b", "c", "d", "a"]
-p a.my_rotate(2)      #=> ["c", "d", "a", "b"]
-p a.my_rotate(-3)     #=> ["b", "c", "d", "a"]
-p a.my_rotate(15)     #=> ["d", "a", "b", "c"]
+p a.my_join         # => "abcd"
+p a.my_join("$")    # => "a$b$c$d"
