@@ -100,9 +100,18 @@ class Array
                 answer += el + symbol
             end
         end
-    answer
+        answer
     end
 
+    def my_reverse
+        result = []
+        i = self.length - 1
+        while i >= 0
+            result << self[i]
+            i -= 1
+        end
+        result
+    end
     
 end  
 
@@ -131,6 +140,9 @@ end
 # p a.my_rotate(-3)     #=> ["b", "c", "d", "a"]
 # p a.my_rotate(15)     #=> ["d", "a", "b", "c"]
 
-a = [ "a", "b", "c", "d" ]
-p a.my_join         # => "abcd"
-p a.my_join("$")    # => "a$b$c$d"
+# a = [ "a", "b", "c", "d" ]
+# p a.my_join         # => "abcd"
+# p a.my_join("$")    # => "a$b$c$d"
+
+p [ "a", "b", "c" ].my_reverse   #=> ["c", "b", "a"]
+p [ 1 ].my_reverse               #=> [1]
