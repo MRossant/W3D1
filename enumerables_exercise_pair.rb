@@ -24,8 +24,5 @@ class Array
     end
 end
 
-a = [1, 2, 3]
-p a.my_select { |num| num > 1 }
-
-
+puts "making some changes here"
 
