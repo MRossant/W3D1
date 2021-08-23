@@ -84,14 +84,10 @@ class Array
     end
 
     def my_rotate(num=1)
-        result = []
-        if num > 0
-            num.times do |el| 
+        self.rotate(num)
     end
 
-
-
-    def 
+    
 end  
 
 
