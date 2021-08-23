@@ -8,7 +8,7 @@ class Array
             prc.call(self[i]) # { |num| num > 1 }
             i += 1
         end
-        debugger
+        # debugger
         self
     end
 
@@ -16,13 +16,17 @@ class Array
         result = []
         i = 0
         while i < self.length
-            result << self[i] if self.my_each(&prc) # returns array
+            result << self[i] if prc.call(self[i])
             i += 1
         end
 
         result
     end
+    
+    
 end
 
-puts "making some changes here"
+a = [1, 2, 3]
+p a.my_select { |num| num > 1 } # => [2, 3]
+p a.my_select { |num| num == 4 } # => []
 
